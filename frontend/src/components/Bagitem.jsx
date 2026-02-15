@@ -27,7 +27,7 @@ export default function Bagitem({ item }) {
           </div>
         </div>
 
-        <div className="remove-from-cart" onclick={() => {}}>
+        <div className="remove-from-cart" onClick={() => {}}>
           X
         </div>
       </div>

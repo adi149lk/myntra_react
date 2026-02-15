@@ -14,7 +14,7 @@ export default function Homeitem({ item }) {
         <span className="original-price">Rs {item.original_price}</span>
         <span className="discount">({item.discount_percentage}% OFF)</span>
       </div>
-      <button className="btn-add-bag" onclick={() => {}}>
+      <button className="btn-add-bag" onClick={() => {}}>
         Add to Bag
       </button>
     </div>
