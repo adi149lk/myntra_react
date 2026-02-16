@@ -7,7 +7,8 @@ import Spiner from "../components/spiner";
 
 function App() {
   const fetchstatus = useSelector((store) => store.fetchstatus);
-  console.log(fetchstatus.currentlyFetching);
+  console.log("comme to app");
+
   return (
     <>
       <Header />

@@ -5,6 +5,7 @@ const itemSlice = createSlice({
   initialState: [],
   reducers: {
     addInitialItems: (state, action) => {
+      console.log("come to itemSlice");
       return action.payload;
     },
   },
