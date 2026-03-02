@@ -2,8 +2,9 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import App from "./routes/App";
 import Home from "./components/Home";
 import Bag from "./components/Bag";

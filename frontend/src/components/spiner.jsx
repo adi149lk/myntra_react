@@ -1,5 +1,4 @@
 const Spinner = () => {
-  console.log("comme to spinner ");
   return (
     <div
       className="spinner-grow text-primary"

@@ -1,24 +1,29 @@
-export default function Bagsumery() {
-  const sumery = {
-    totalItem: 2,
-    totalMRP: 234,
-    totalDiscount: 90,
-    finalPayment: 780,
-  };
+import { useSelector } from "react-redux";
+export default function Bagsumery({ items }) {
+  const bag = useSelector((store) => store.bag);
+  const Convenience_fee = 99;
+
+  const totalItem = bag.length;
+  let totalMRP = 0;
+  let totalDiscount = 0;
+  items.forEach((item) => {
+    totalMRP += item.original_price;
+    totalDiscount += item.original_price - item.current_price;
+  });
+  let finalPayment = totalMRP - totalDiscount + Convenience_fee;
+
   return (
     <div className="bag-summary">
       <div className="bag-details-container">
-        <div className="price-header">
-          PRICE DETAILS ({sumery.totalItem} Items){" "}
-        </div>
+        <div className="price-header">PRICE DETAILS ({totalItem} Items) </div>
         <div className="price-item">
           <span className="price-item-tag">Total MRP</span>
-          <span className="price-item-value">₹{sumery.totalMRP}</span>
+          <span className="price-item-value">₹{totalMRP}</span>
         </div>
         <div className="price-item">
           <span className="price-item-tag">Discount on MRP</span>
           <span className="price-item-value priceDetail-base-discount">
-            -₹{sumery.totalDiscount}
+            -₹{totalDiscount}
           </span>
         </div>
         <div className="price-item">
@@ -28,7 +33,7 @@ export default function Bagsumery() {
         <hr />
         <div className="price-footer">
           <span className="price-item-tag">Total Amount</span>
-          <span className="price-item-value">₹{sumery.finalPayment}</span>
+          <span className="price-item-value">₹{finalPayment}</span>
         </div>
       </div>
       <button className="btn-place-order">
